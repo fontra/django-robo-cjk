@@ -1,6 +1,6 @@
 # django-robo-cjk
 
-`django-robo-cjk` is the server-side engine based on `python` and `django` that serves the [robo-cjk](https://github.com/BlackFoundryCom/robo-cjk) RoboFont plugin and the [fontra-rcjk](https://github.com/googlefonts/fontra-rcjk) Fontra plugin.
+`django-robo-cjk` is the server-side engine based on `python` and `django` that serves the [robo-cjk](https://github.com/BlackFoundryCom/robo-cjk) RoboFont plugin and the [fontra-rcjk](https://github.com/fontra/fontra-rcjk) Fontra plugin.
 
 Its purpose is to centralize and speed-up the design/development of CJK typefaces providing a whole set of APIs to manage `.rcjk` projects.
 
@@ -21,7 +21,7 @@ mkdir myrcjkfont && cd myrcjkfont
 python -m venv venv && . venv/bin/activate
 
 # clone repository
-git clone https://github.com/googlefonts/django-robo-cjk.git src/ && cd src/
+git clone https://github.com/fontra/django-robo-cjk.git src/ && cd src/
 
 # upgrade pip
 python -m pip install --upgrade pip
@@ -101,9 +101,9 @@ TEST_API_PASSWORD=""
 
 ## API
 
-- [Globals](https://github.com/googlefonts/django-robo-cjk/edit/master/API.md#globals)
-- [Endpoints](https://github.com/googlefonts/django-robo-cjk/edit/master/API.md#endpoints)
-- [Client](https://github.com/googlefonts/django-robo-cjk/edit/master/API.md#client)
+- [Globals](https://github.com/fontra/django-robo-cjk/edit/master/API.md#globals)
+- [Endpoints](https://github.com/fontra/django-robo-cjk/edit/master/API.md#endpoints)
+- [Client](https://github.com/fontra/django-robo-cjk/edit/master/API.md#client)
 
 ## License
 Released under [GNU General Public License v3.0](LICENSE).
