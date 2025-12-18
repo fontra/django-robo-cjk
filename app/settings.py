@@ -31,15 +31,16 @@ env_path = env_root() + "/conf/env_settings"
 environ.Env.read_env(env_path)
 
 # sentry - https://sentry.io/black-foundry/
-sentry_sdk.init(
-    dsn=env("SENTRY_DSN"),
-    integrations=[DjangoIntegration()],
-    environment=env("SENTRY_ENVIRONMENT"),
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True,
-)
-sentry_sdk_ignore_logger("django.security.DisallowedHost")
+if env("USE_SENTRY", default=False):
+    sentry_sdk.init(
+        dsn=env("SENTRY_DSN"),
+        integrations=[DjangoIntegration()],
+        environment=env("SENTRY_ENVIRONMENT"),
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True,
+    )
+    sentry_sdk_ignore_logger("django.security.DisallowedHost")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,6 +73,8 @@ TEST_API_PASSWORD = env("TEST_API_PASSWORD")
 DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
 
 SITE_ID = 1
 

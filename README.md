@@ -46,12 +46,16 @@ ADMIN_EMAIL=""
 
 # django allowed hosts (separated by comma)
 ALLOWED_HOSTS=""
+# django csrf (separated by comma)
+CSRF_TRUSTED_ORIGINS=""
 
 # django database
 DATABASE_ENGINE=""
 DATABASE_NAME=""
 DATABASE_USER=""
 DATABASE_PASSWORD=""
+DATABASE_HOST="localhost"
+DATABASE_PORT=""
 
 # django debug
 DEBUG=True
@@ -85,6 +89,7 @@ ROBOCJK_EXPORT_QUERIES_PAGINATION_LIMIT=500
 SECRET_KEY=""
 
 # sentry
+USE_SENTRY=0
 SENTRY_DSN=""
 SENTRY_ENVIRONMENT=""
 
